@@ -47,7 +47,7 @@ int Interface::display_menu()
 		cout << "Que voulez_vous faire ?\n" << endl;
 		cout << "1. Afficher les donnees des capteurs" << endl;
 		cout << "2. Changer la frequence d'actualisation de la temperature" << endl;
-		cout << "3. Changer la frequence d'actualisation de l'humidité" << endl;
+		cout << "3. Changer la frequence d'actualisation de l'humiditï¿½" << endl;
 		cout << "4. Changer la frequence d'actualisation de la pression" << endl;
 		cout << "5. Changer la frequence d'actualisation de la lumiere" << endl;
 		cout << "6. Changer le temps d'afficher des donnees des capteurs" << endl;
@@ -62,12 +62,8 @@ int Interface::display_menu()
 
 void Interface::waitUser()
 {
-	char input = '\0';
-	do
-	{
-		cout << "Appuiez sur une touche et Entrer pour continuer..." << endl;
-		cin >> input;
-	} while(input == '\0');
-
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	cout << "Appuiez sur Entrer pour continuer..." << endl;
+	cin.get();
 }
 

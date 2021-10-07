@@ -133,4 +133,18 @@ CMakeFiles/AP4A.dir/src/Interface.cpp.obj: \
  c:\mingw64\include\c++\11.2.0\istream \
  c:\mingw64\include\c++\11.2.0\bits\istream.tcc \
  c:\mingw64\x86_64-w64-mingw32\include\conio.h \
- c:\mingw64\x86_64-w64-mingw32\include\sec_api\conio_s.h
+ c:\mingw64\x86_64-w64-mingw32\include\sec_api\conio_s.h \
+ c:\mingw64\include\c++\11.2.0\thread \
+ c:\mingw64\include\c++\11.2.0\bits\std_thread.h \
+ c:\mingw64\include\c++\11.2.0\tuple \
+ c:\mingw64\include\c++\11.2.0\utility \
+ c:\mingw64\include\c++\11.2.0\bits\stl_relops.h \
+ c:\mingw64\include\c++\11.2.0\array \
+ c:\mingw64\include\c++\11.2.0\bits\uses_allocator.h \
+ c:\mingw64\include\c++\11.2.0\bits\invoke.h \
+ c:\mingw64\include\c++\11.2.0\bits\refwrap.h \
+ c:\mingw64\include\c++\11.2.0\bits\unique_ptr.h \
+ c:\mingw64\include\c++\11.2.0\bits\this_thread_sleep.h \
+ c:\mingw64\include\c++\11.2.0\chrono c:\mingw64\include\c++\11.2.0\ratio \
+ c:\mingw64\include\c++\11.2.0\limits c:\mingw64\include\c++\11.2.0\ctime \
+ c:\mingw64\include\c++\11.2.0\bits\parse_numbers.h

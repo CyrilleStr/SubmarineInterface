@@ -11,6 +11,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <conio.h>
+#include <thread>
 
 class Interface {
 public:
