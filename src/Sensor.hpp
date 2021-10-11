@@ -16,8 +16,8 @@ class Sensor {
 	protected:
 		int m_min;
 		int m_max;
-		int frequency;
-		std::string name;
+		int m_frequency;
+		std::string m_name;
 		std::string m_logFileName;
 		std::string m_unit;
 		

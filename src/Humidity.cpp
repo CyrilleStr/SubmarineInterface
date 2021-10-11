@@ -10,10 +10,10 @@ Humidity::Humidity()
 {
 	this->m_min = 40;
 	this->m_max = 60;
-	this->name = "Humdidite";
+	this->m_name = "Humdidite";
 	this->m_logFileName = "humidityLog.txt";
 	this->m_unit = "%";
-	this->frequency = 1000;
+	this->m_frequency = 1000;
 }
 
 Humidity::~Humidity() {

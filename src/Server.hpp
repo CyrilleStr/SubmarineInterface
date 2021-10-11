@@ -33,19 +33,19 @@ public:
 	 * @param consolActivation : the status of the console activation
 	 * @param logActivation : the status of the log activation
 	 */
-	Server(bool consolActivation, bool logActivation);
+	Server(bool consolActivation_p, bool logActivation_p);
 
 	/**
 	 * @brief Copy constructor
 	 * 
 	 */
-	Server(const Server& s);
+	Server(const Server& server_p);
 
 	/**
 	 * @brief Operation overload =
 	 *
 	 */
-	void operator=(Server& s);
+	void operator=(Server& server_p);
 
 	/**
 	 * @brief Destroy the Server object
@@ -72,16 +72,16 @@ public:
 	/**
 	 * @brief change the status of the console activation
 	 * 
-	 * @param status the status
+	 * @param status_p the status
 	 */
-	void changeStatusConsol(bool status);
+	void changeStatusConsol(bool status_p);
 
 	/**
 	 * @brief change the status of the log activation
 	 * 
-	 * @param status the status
+	 * @param status_p the status
 	 */
-	void changeStatusLog(bool status);
+	void changeStatusLog(bool status_p);
 
 	/**
 	 * @brief Get the Status Consol object

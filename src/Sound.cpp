@@ -9,10 +9,10 @@
 Sound::Sound() {
 	this->m_max = 90;
 	this->m_min = 85;
-	this->name = "Son";
+	this->m_name = "Son";
 	this->m_logFileName ="soundLog.txt";
 	this->m_unit = "dB";
-	this->frequency = 1000;
+	this->m_frequency = 1000;
 }
 
 Sound::~Sound() {}

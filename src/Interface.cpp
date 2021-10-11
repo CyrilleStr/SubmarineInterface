@@ -30,16 +30,13 @@ int Interface::display_menu()
 	char input;
 	int choice = 0;
 
-	while(choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6)
+	while(choice != 1 && choice != 2 && choice != 3)
 	{
 		clear();
 		cout << "Que voulez_vous faire ?\n" << endl;
 		cout << "1. Afficher les donnees des capteurs" << endl;
 		cout << "2. Changer la frequence d'actualisation de la temperature" << endl;
-		cout << "3. Changer la frequence d'actualisation de l'humidite" << endl;
-		cout << "4. Changer la frequence d'actualisation de la pression" << endl;
-		cout << "5. Changer la frequence d'actualisation de la lumiere" << endl;
-		cout << "6. Quitter l'interface" << endl;
+		cout << "3. Quitter l'interface" << endl;
 		cout << "Entrez votre choix : " << endl;
 		cin >> input;
 		choice = atoi(&input);

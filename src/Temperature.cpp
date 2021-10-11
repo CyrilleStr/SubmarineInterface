@@ -10,10 +10,10 @@ Temperature::Temperature()
 {
 	this->m_min = 15;
 	this->m_max = 20;
-	this->name = "Temperature";
+	this->m_name = "Temperature";
 	this->m_logFileName = "temperatureLog.txt";
 	this->m_unit ="degre celsius";
-	this->frequency = 1000;
+	this->m_frequency = 1000;
 }
 
 Temperature::~Temperature(){};

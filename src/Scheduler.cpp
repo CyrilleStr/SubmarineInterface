@@ -18,10 +18,10 @@ Scheduler::Scheduler() :
 
 Scheduler::~Scheduler() {}
 
-void Scheduler::schedule(Interface i)
+void Scheduler::schedule(Interface interface_p)
 {
 	std::cout << "Pour arreter le programme, appuiez sur Entrer" << std::endl;
-	i.waitUser();
+	interface_p.waitUser();
 
 	s_stop = false;
 
@@ -40,14 +40,14 @@ void Scheduler::schedule(Interface i)
 	tLight.join();
 }
 
-void Scheduler::getData(Sensor sensor)
+void Scheduler::getData(Sensor sensor_p)
 {
 	while(!s_stop)
 	{
 		if(this->server.getStatusConsol()) 
-			this->server.consolWrite(sensor,time(0));
+			this->server.consolWrite(sensor_p,time(0));
 		if(this->server.getStatusLog())
-			this->server.fileWrite(sensor,time(0));
-		std:this_thread::sleep_for(std::chrono::milliseconds(sensor.getFrequency()));
+			this->server.fileWrite(sensor_p,time(0));
+		std:this_thread::sleep_for(std::chrono::milliseconds(sensor_p.getFrequency()));
 	}
 }

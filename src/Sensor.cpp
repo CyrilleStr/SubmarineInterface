@@ -35,10 +35,10 @@ std::string Sensor::getLogFileName()
 
 int Sensor::getFrequency()
 {
-	return this->frequency;
+	return this->m_frequency;
 }
 
 std::string Sensor::getName()
 {
-	return this->name;
+	return this->m_name;
 }

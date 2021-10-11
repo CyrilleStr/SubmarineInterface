@@ -17,7 +17,7 @@ int main() {
 
 	int choice = interface.display_menu();
 
-	while(choice != 6) // Menu
+	while(choice != 3) // Menu
 	{
 		switch(choice)
 			{
@@ -27,39 +27,17 @@ int main() {
 					scheduler.schedule(interface);
 				}
 					break;
-				case 2: // Changer la frequence d'actualisation de la temperature
+				case 2: // Changer les  frequences d'actualisation des capteurs
 				{
-					interface.clear();
-					std::cout << "Fonction pas encore implementee\n" << std::endl;
+					std::cout << "Fonction pas encore implemente" << std::endl;
 					interface.waitUser();
 				}
-				break;
-				case 3: // Changer la frequence d'actualisation de l'humidite
-					{
-						interface.clear();
-						std::cout << "Fonction pas encore implementee" << std::endl;
-						interface.waitUser();
-					}
-				break;
-				case 4: // Changer la frequence d'actualisation de la pression
-					{
-						interface.clear();
-						std::cout << "Fonction pas encore implementee" << std::endl;
-						interface.waitUser();
-					}
-				break;
-				case 5: // Changer la frequence d'actualisation de la lumiere
-					{
-						interface.clear();
-						std::cout << "Fonction pas encore implementee" << std::endl;
-						interface.waitUser();
-					}
 				break;
 				default:
 					std::cout << "\nErreur du choix du menu. Fermeture du programme" << std::endl;
 					choice = 0;
 			}
-		if(choice != 6) choice = interface.display_menu();
+		if(choice != 3) choice = interface.display_menu();
 	}
 
 	interface.clear();

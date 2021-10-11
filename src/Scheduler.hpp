@@ -36,7 +36,7 @@ private:
 	 * 
 	 * @param sensor 
 	 */
-	void getData(Sensor sensor);
+	void getData(Sensor sensor_p);
 public:
 	/**
 	 * @brief Construct a new Scheduler object
@@ -55,7 +55,7 @@ public:
 	 * 
 	 * @param i : the interface
 	 */
-	void schedule(Interface i);
+	void schedule(Interface interface_p);
 };
 
 #endif /* SCHEDULER_HPP_ */

@@ -10,10 +10,10 @@ Light::Light()
 {
 	this->m_min = 0;
 	this->m_max = 2;
-	this->name = "Lumiere";
+	this->m_name = "Lumiere";
 	this->m_logFileName = "lightLog.txt";
 	this->m_unit = "lux";
-	this->frequency = 1000;
+	this->m_frequency = 1000;
 }
 
 Light::~Light() {}

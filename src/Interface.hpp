@@ -30,7 +30,6 @@ class Interface
 	 */
 	void clear();
 
-
 	/**
 	 * @brief display the menu, get and return the user's choice
 	 * 

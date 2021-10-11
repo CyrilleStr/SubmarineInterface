@@ -12,23 +12,23 @@ Server::Server():
 	m_logActivation(true)
 {};
 
-Server::Server(bool consolActivation, bool logActivation):
-	m_consolActivation(consolActivation),
-	m_logActivation(logActivation)
+Server::Server(bool consolActivation_p, bool logActivation_p):
+	m_consolActivation(consolActivation_p),
+	m_logActivation(logActivation_p)
 {};
 
 Server::~Server(){};
 
-Server::Server(const Server& s)
+Server::Server(const Server& server_p)
 {
-	this->m_logActivation = s.m_logActivation;
-	this->m_consolActivation = s.m_consolActivation;
+	this->m_logActivation = server_p.m_logActivation;
+	this->m_consolActivation = server_p.m_consolActivation;
 }
 
-void Server::operator=(Server& s)
+void Server::operator=(Server& server_p)
 {
-	this->m_consolActivation = s.m_consolActivation;
-	this->m_logActivation = s.m_logActivation;
+	this->m_consolActivation = server_p.m_consolActivation;
+	this->m_logActivation = server_p.m_logActivation;
 }
 
 void Server::fileWrite(Sensor sensor_p, const time_t now_p)
@@ -56,14 +56,14 @@ void Server::consolWrite(Sensor sensor_p,const time_t now_p)
 	std::cout << cat;
 }
 
-void Server::changeStatusConsol(bool status)
+void Server::changeStatusConsol(bool status_p)
 {
-	this->m_consolActivation = status;
+	this->m_consolActivation = status_p;
 }
 
-void Server::changeStatusLog(bool status)
+void Server::changeStatusLog(bool status_p)
 {
-	this->m_logActivation = status;
+	this->m_logActivation = status_p;
 }
 
 bool Server::getStatusConsol()
