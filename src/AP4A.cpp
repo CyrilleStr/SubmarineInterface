@@ -25,7 +25,6 @@ int main() {
 				{
 					interface.clear();
 					scheduler.schedule(interface);
-					interface.waitUser();
 				}
 					break;
 				case 2: // Changer la frequence d'actualisation de la temperature

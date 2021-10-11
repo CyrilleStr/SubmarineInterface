@@ -23,12 +23,12 @@ void Scheduler::schedule(Interface i)
 	std::cout << "Pour arreter le programme, appuiez sur Entrer" << std::endl;
 	i.waitUser();
 
+	s_stop = false;
+
 	std::thread tTemperature(&Scheduler::getData,this,this->temperature);
 	std::thread tHumidity(&Scheduler::getData,this,this->humidity);
 	std::thread tSound(&Scheduler::getData,this,this->sound);
 	std::thread tLight(&Scheduler::getData,this,this->light);
-
-	std::cout << "Thread id: " << tTemperature.get_id() << std::endl;
 
 	// Wait for the user to press Enter to stop
 	std::cin.get();
