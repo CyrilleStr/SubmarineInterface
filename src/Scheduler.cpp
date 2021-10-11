@@ -6,108 +6,48 @@
 
 #include "Scheduler.hpp"
 
-using namespace std;
+static bool s_stop = false;
 
-Scheduler::Scheduler():
-	getTemperatureFrequency(1),
-	getHumidityFrequency(1),
-	getSoundFrequency(1),
-	getLightFrequency(1),
-	displayDataTime(15)
-{};
-
-Scheduler::Scheduler(int t, int h, int s, int l, int time):
-	getTemperatureFrequency(t),
-	getHumidityFrequency(h),
-	getSoundFrequency(s),
-	getLightFrequency(l),
-	displayDataTime(time)
+Scheduler::Scheduler() : 
+	server(Server(true,true)),
+	humidity(Humidity()),
+	temperature(Temperature()),
+	light(Light()),
+	sound(Sound())
 {};
 
 Scheduler::~Scheduler() {}
 
-void Scheduler::schedule(Server& server)
+void Scheduler::schedule(Interface i)
 {
-	int temperatureCounter = 0,
-			humidityCounter = 0,
-			soundCounter = 0,
-			lightCounter = 0;
+	std::cout << "Pour arreter le programme, appuiez sur Entrer" << std::endl;
+	i.waitUser();
 
-	Temperature temperature = Temperature();
-	Light light = Light();
-	Humidity humidity = Humidity();
-	Sound sound = Sound();
+	std::thread tTemperature(&Scheduler::getData,this,this->temperature);
+	std::thread tHumidity(&Scheduler::getData,this,this->humidity);
+	std::thread tSound(&Scheduler::getData,this,this->sound);
+	std::thread tLight(&Scheduler::getData,this,this->light);
 
-	for(int i = 0; i<this->displayDataTime+1 ; i++)
-	{
-		std::cout << "**********" << "Temps: " << i << " secondes" << "**********" << endl;
+	std::cout << "Thread id: " << tTemperature.get_id() << std::endl;
 
-		if(temperatureCounter >= this->getTemperatureFrequency)
-		{
-			temperatureCounter = 0;
-			if(server.getStatusConsol())
-				server.consolWrite(temperature.getDataType(), temperature.getData());
-			if(server.getStatusLog())
-				server.fileWrite(temperature.getDataType(), temperature.getData(),i);
-		}
+	// Wait for the user to press Enter to stop
+	std::cin.get();
+	s_stop = true;
 
-		if(humidityCounter >= this->getHumidityFrequency)
-		{
-			humidityCounter = 0;
-			if(server.getStatusConsol())
-				server.consolWrite(humidity.getDataType(), humidity.getData());
-			if(server.getStatusLog())
-				server.fileWrite(humidity.getDataType(), humidity.getData(),i);
-		}
-
-		if(soundCounter >= this->getSoundFrequency)
-		{
-			soundCounter = 0;
-			if(server.getStatusConsol())
-				server.consolWrite(sound.getDataType(), sound.getData());
-			if(server.getStatusLog())
-				server.fileWrite(sound.getDataType(), sound.getData(),i);
-		}
-
-		if(lightCounter >= this->getLightFrequency)
-		{
-			lightCounter = 0;
-			if(server.getStatusConsol())
-				server.consolWrite(light.getDataType(), light.getData());
-			if(server.getStatusLog())
-				server.fileWrite(light.getDataType(), light.getData(),i);
-		}
-
-		temperatureCounter++;
-		humidityCounter++;
-		soundCounter++;
-		lightCounter++;
-		wait();
-	}
+	tTemperature.join();
+	tHumidity.join();
+	tSound.join();
+	tLight.join();
 }
 
-void Scheduler::changeDisplayDataTime()
+void Scheduler::getData(Sensor sensor)
 {
-	char input;
-	int time;
-
-	std::cout << "Pendant combien de secondes voulez affichez les donnees des capteurs" << std::endl;
-	std::cin >> input;
-	time = atoi(&input);
-
-	while (time > 100 || time == 0)
+	while(!s_stop)
 	{
-		std::cout << "Vous ne pouvez pas afficher des donnees pendant plus de 100 secondes" << std::endl;
-		std::cout << "Pendant combien de secondes voulez affichez les donnees des capteurs" << std::endl;
-		std::cin >> input;
-		time = atoi(&input);
+		if(this->server.getStatusConsol()) 
+			this->server.consolWrite(sensor,time(0));
+		if(this->server.getStatusLog())
+			this->server.fileWrite(sensor,time(0));
+		std:this_thread::sleep_for(std::chrono::milliseconds(sensor.getFrequency()));
 	}
-
-	this->displayDataTime = time;
 }
-
-
-
-
-
-

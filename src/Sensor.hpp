@@ -10,12 +10,23 @@
 
 #include <cstdlib>
 #include <time.h>
+#include <string>
 
 class Sensor {
 	protected:
-		int min;
-		int max;
-		int dataType; // 1=temperature, 2=humidity, 3=sound, 4=light
+		int m_min;
+		int m_max;
+		int frequency;
+		std::string name;
+		std::string m_logFileName;
+		std::string m_unit;
+		
+		/**
+		 * @brief Get the Unit object
+		 * 
+		 * @return string : the Unit object
+		 */
+		std::string getUnit();
 	public:
 		/**
 		 * @brief Construct a new Sensor object
@@ -34,7 +45,7 @@ class Sensor {
 		 * 
 		 * @return int : the data
 		 */
-		int getData();
+		std::string getData();
 
 		/**
 		 * @brief generate a lucky integer within a given range [min;max]
@@ -44,11 +55,25 @@ class Sensor {
 		int aleaGenVal();
 
 		/**
-		 * @brief Get the Data Type object
+		 * @brief Get the Log File Name object
 		 * 
-		 * @return int : the data type (1=temperature, 2=humidity, 3=sound, 4=light)
+		 * @return string : the LogFile name
 		 */
-		int getDataType();
+		std::string getLogFileName();
+
+		/**
+		 * @brief Get the Frequency object
+		 * 
+		 * @return int : the frequency
+		 */
+		int getFrequency();
+
+		/**
+		 * @brief Get the Name object
+		 * 
+		 * @return std::string 
+		 */
+		std::string getName();
 };
 
 #endif /* SENSOR_HPP_ */

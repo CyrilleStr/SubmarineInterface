@@ -1,0 +1,20 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(Windows) Lancer",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "C:\\Users\\cyril\\Desktop\\AP4A TP\\Project CMake\\AP4A.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal",
+            "miDebuggerPath": "c:\\mingw64\\bin\\gdb.exe"
+        }
+    ]
+}

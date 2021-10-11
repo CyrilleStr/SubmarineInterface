@@ -10,44 +10,39 @@
 
 #include <iostream>
 #include <fstream>
-#if defined(_WIN32)
-#include <windows.h>
-#define wait() Sleep(1000)
-#else
-#include <unistd.h>
-#define wait() sleep(1000)
-#endif
+#include <thread>
+#include <chrono>
+#include <ctime>
+#include <string.h>
 
+#include "Interface.hpp"
 #include "Server.hpp"
 #include "Sound.hpp"
+#include "Sensor.hpp"
 #include "Light.hpp"
 #include "Temperature.hpp"
 #include "Humidity.hpp"
 
 class Scheduler {
 private:
-	int getTemperatureFrequency;
-	int getHumidityFrequency;
-	int getSoundFrequency;
-	int getLightFrequency;
-	int displayDataTime;
+	Server server;
+	Humidity humidity;
+	Temperature temperature;
+	Light light;
+	Sound sound;
+	
+	/**
+	 * @brief Get the Data object
+	 * 
+	 * @param sensor 
+	 */
+	void getData(Sensor sensor);
 public:
 	/**
 	 * @brief Construct a new Scheduler object
 	 * 
 	 */
 	Scheduler();
-
-	/**
-	 * @brief Construct a new Scheduler object
-	 * 
-	 * @param t temperature frequency update 
-	 * @param h humidity frequency update
-	 * @param s sound frequency update
-	 * @param l light frequency update
-	 * @param t time to display sensor's data
-	 */
-	Scheduler(int t, int h, int s, int l, int time);
 
 	/**
 	 * @brief Destroy the Scheduler object
@@ -58,15 +53,9 @@ public:
 	/**
 	 * @brief get data, log them in a file and print them in the console through the server
 	 * 
-	 * @param server : the server use to log and print
+	 * @param i : the interface
 	 */
-	void schedule(Server& server);
-
-	/**
-	 * @brief change the time to display sensor's data with user input
-	 *
-	 */
-	void changeDisplayDataTime();
+	void schedule(Interface i);
 };
 
 #endif /* SCHEDULER_HPP_ */

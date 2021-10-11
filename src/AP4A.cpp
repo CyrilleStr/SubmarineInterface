@@ -7,79 +7,63 @@
 //============================================================================
 
 #include <iostream>
-#include <fstream>
 
 #include "Interface.hpp"
-#include "Server.hpp"
 #include "Scheduler.hpp"
 
-using namespace std;
-
 int main() {
-	Interface i = Interface();
-	Scheduler scheduler = Scheduler(1,1,1,1,15);
-	Server server = Server(true,true);
+	Scheduler scheduler = Scheduler();
+	Interface interface = Interface();
 
-	int choice = i.display_menu();
+	int choice = interface.display_menu();
 
-	while(choice != 7) // Menu
+	while(choice != 6) // Menu
 	{
 		switch(choice)
 			{
 				case 1: // Afficher les donnees des capteurs
 				{
-					i.clear();
-					scheduler.schedule(server);
-					i.waitUser();
+					interface.clear();
+					scheduler.schedule(interface);
+					interface.waitUser();
 				}
 					break;
 				case 2: // Changer la frequence d'actualisation de la temperature
 				{
-					i.clear();
-					cout << "Fonction pas encore implementee\n" << endl;
-					i.waitUser();
+					interface.clear();
+					std::cout << "Fonction pas encore implementee\n" << std::endl;
+					interface.waitUser();
 				}
 				break;
 				case 3: // Changer la frequence d'actualisation de l'humidite
 					{
-						i.clear();
-						cout << "Fonction pas encore implementee" << endl;
-						i.waitUser();
+						interface.clear();
+						std::cout << "Fonction pas encore implementee" << std::endl;
+						interface.waitUser();
 					}
 				break;
 				case 4: // Changer la frequence d'actualisation de la pression
 					{
-						i.clear();
-						cout << "Fonction pas encore implementee" << endl;
-						i.waitUser();
+						interface.clear();
+						std::cout << "Fonction pas encore implementee" << std::endl;
+						interface.waitUser();
 					}
 				break;
 				case 5: // Changer la frequence d'actualisation de la lumiere
 					{
-						i.clear();
-						cout << "Fonction pas encore implementee" << endl;
-						i.waitUser();
-					}
-				break;
-				case 6:
-					{
-						i.clear();
-						scheduler.changeDisplayDataTime();
-						i.waitUser();
+						interface.clear();
+						std::cout << "Fonction pas encore implementee" << std::endl;
+						interface.waitUser();
 					}
 				break;
 				default:
-					cout << "\nErreur du choix du menu. Fermeture du programme" << endl;
+					std::cout << "\nErreur du choix du menu. Fermeture du programme" << std::endl;
 					choice = 0;
 			}
-		if(choice != 7) choice = i.display_menu();
+		if(choice != 6) choice = interface.display_menu();
 	}
 
-	i.clear();
-	cout << "\nFermeture du programme..." << endl;
-
-	i.~Interface();
-	scheduler.~Scheduler();
-	server.~Server();
+	interface.clear();
+	std::cout << "\nFermeture du programme..." << std::endl;
 	return 0;
 }

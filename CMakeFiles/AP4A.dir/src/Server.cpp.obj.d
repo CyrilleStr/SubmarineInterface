@@ -136,4 +136,6 @@ CMakeFiles/AP4A.dir/src/Server.cpp.obj: \
  c:\mingw64\include\c++\11.2.0\bits\codecvt.h \
  c:\mingw64\include\c++\11.2.0\x86_64-w64-mingw32\bits\basic_file.h \
  c:\mingw64\include\c++\11.2.0\x86_64-w64-mingw32\bits\c++io.h \
- c:\mingw64\include\c++\11.2.0\bits\fstream.tcc
+ c:\mingw64\include\c++\11.2.0\bits\fstream.tcc \
+ c:\mingw64\include\c++\11.2.0\ctime \
+ C:\Users\cyril\Desktop\AP4A\ TP\Project\ CMake\src\Sensor.hpp

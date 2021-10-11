@@ -11,16 +11,14 @@
 
 #include <iostream>
 #include <fstream>
+#include <ctime>
+#include "Sensor.hpp"
 
 class Server
 {
 private:
-	bool consolActivation;
-	bool logActivation;
-	std::ofstream temperatureLogFile;
-	std::ofstream humidityLogFile;
-	std::ofstream soundLogFile;
-	std::ofstream lightLogFile;
+	bool m_consolActivation;
+	bool m_logActivation;
 
 public:
 	/**
@@ -56,22 +54,20 @@ public:
 	virtual ~Server();
 
 	/**
-	 * @brief write the given data in the log file ("log.txt")
+	 * @brief 
 	 * 
-	 * @param dataType the data type (1=temperature, 2=humidity, 3=sound, 4=light)
-	 * @param dataValue the data value
-	 * @param time the current time (in seconds)
-	 * @param logFile the log file
+	 * @param sensor_p 
+	 * @param now_p 
 	 */
-	void fileWrite(int dataType, int dataValue, int time);
+	void fileWrite(Sensor sensor_p,const time_t now_p);
 
 	/**
-	 * @brief write the fiven data int the console
+	 * @brief 
 	 * 
-	 * @param dataType the data type (1=temperature, 2=humidity, 3=sound, 4=light)
-	 * @param dataValue the data value
+	 * @param sensor_p 
+	 * @param now_p 
 	 */
-	void consolWrite(int dataType, int dataValue);
+	void consolWrite(Sensor sensor_p,const time_t now_p);
 
 	/**
 	 * @brief change the status of the console activation
@@ -102,14 +98,6 @@ public:
 	 * @return false : the log isn't activated
 	 */
 	bool getStatusLog();
-
-	/**
-	 * @brief Get the Data Name object
-	 *
-	 * @param dataType data type (1=temperature, 2=humidity, 3=sound, 4=light)
-	 * @return char* : the name of the data type
-	 */
-	char* getDataName(int dataType);
 };
 
 #endif /* SERVER_HPP_ */

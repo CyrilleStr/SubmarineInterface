@@ -8,139 +8,72 @@
 #include "Server.hpp"
 
 Server::Server():
-	consolActivation(true),
-	logActivation(true)
-{
-	this->temperatureLogFile.open("log/temperatureLog.txt");
-	this->humidityLogFile.open("log/humidityLog.txt");
-	this->soundLogFile.open("log/soundLog.txt");
-	this->lightLogFile.open("log/lightLog.txt");
-};
+	m_consolActivation(true),
+	m_logActivation(true)
+{};
 
 Server::Server(bool consolActivation, bool logActivation):
-	consolActivation(consolActivation),
-	logActivation(logActivation)
-{
-	this->temperatureLogFile.open("log/temperatureLog.txt");
-	this->humidityLogFile.open("log/humidityLog.txt");
-	this->soundLogFile.open("log/soundLog.txt");
-	this->lightLogFile.open("log/lightLog.txt");
-};
+	m_consolActivation(consolActivation),
+	m_logActivation(logActivation)
+{};
 
-Server::~Server(){
-	temperatureLogFile.close();
-	humidityLogFile.close();
-	soundLogFile.close();
-	lightLogFile.close();
-};
+Server::~Server(){};
 
 Server::Server(const Server& s)
 {
-	this->logActivation = s.logActivation;
-	this->consolActivation = s.consolActivation;
+	this->m_logActivation = s.m_logActivation;
+	this->m_consolActivation = s.m_consolActivation;
 }
 
 void Server::operator=(Server& s)
 {
-	this->consolActivation = s.consolActivation;
-	this->logActivation = s.logActivation;
+	this->m_consolActivation = s.m_consolActivation;
+	this->m_logActivation = s.m_logActivation;
 }
 
-void Server::fileWrite(int dataType, int dataValue, int time)
+void Server::fileWrite(Sensor sensor_p, const time_t now_p)
 {
-	std::ofstream* logFile;
-
-	switch(dataType)
-		{
-			case 1:
-			{
-				logFile = &this->temperatureLogFile;
-			}
-			break;
-			case 2:
-			{
-				logFile = &this->humidityLogFile;
-			}
-			break;
-			case 3:
-			{
-				logFile = &this->soundLogFile;
-			}
-			break;
-			case 4:
-			{
-				logFile = &this->lightLogFile;
-			}
-			break;
-			default:
-				std::cout << "Erreur: DataType inconnu";
-		}
-
-	if(logFile->is_open())
+	std::ofstream file("log/" + sensor_p.getLogFileName(),std::ios::app);
+	// file.open();
+	if(file.is_open())
 	{
-		*logFile << "Temps: "<< time << " secondes : " << dataValue << "\n";
+		std::string time = ctime(&now_p);
+		if(time[time.size() - 1] == '\n') time[time.size() - 1] = ')';
+		file << sensor_p.getName() << " (" << time << " : " << sensor_p.getData() << std::endl;
 	}
-	else {
-		std::cout << "Erreur: impossible d'ouvrir le ficher de log " << std::endl;
+	else
+	{
+		std::cout << "Erreur: impossible d\'ouvrir le ficher de log : " << sensor_p.getData() << std::endl;
 	}
-
+	file.close();
 }
 
-void Server::consolWrite(int dataType, int dataValue)
+void Server::consolWrite(Sensor sensor_p,const time_t now_p)
 {
-
-	std::cout << "\t" << this->getDataName(dataType) << ": " << dataValue << std::endl;
+	std::string time = ctime(&now_p);
+	if(time[time.size() - 1] == '\n') time[time.size() - 1] = '\0';
+	std::string cat =  sensor_p.getName() + " (" + time + ") : " + sensor_p.getData() + "\n";
+	std::cout << cat;
 }
 
 void Server::changeStatusConsol(bool status)
 {
-	this->consolActivation = status;
+	this->m_consolActivation = status;
 }
 
 void Server::changeStatusLog(bool status)
 {
-	this->logActivation = status;
+	this->m_logActivation = status;
 }
 
 bool Server::getStatusConsol()
 {
-	return this->consolActivation;
+	return this->m_consolActivation;
 }
 
 bool Server::getStatusLog()
 {
-	return this->logActivation;
-}
-
-char* Server::getDataName(int dataType)
-{
-	char* dataName;
-	switch(dataType)
-	{
-		case 1:
-		{
-			dataName = "Temperature";
-		}
-		break;
-		case 2:
-		{
-			dataName = "Humidite";
-		}
-		break;
-		case 3:
-		{
-			dataName = "Bruit";
-		}
-		break;
-		case 4:
-		{
-			dataName = "Lumiere";
-		}
-		break;
-		default:
-			dataName = "Erreur";
-	}
-	return dataName;
+	return this->m_logActivation;
 }
 
 

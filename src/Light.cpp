@@ -8,12 +8,12 @@
 
 Light::Light()
 {
-	this->min = 0;
-	this->max = 2;
-	this->dataType = 4;
+	this->m_min = 0;
+	this->m_max = 2;
+	this->name = "Lumiere";
+	this->m_logFileName = "lightLog.txt";
+	this->m_unit = "lux";
+	this->frequency = 1000;
 }
 
-Light::~Light() {
-	// TODO Auto-generated destructor stub
-}
-
+Light::~Light() {}

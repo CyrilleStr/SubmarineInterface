@@ -7,9 +7,12 @@
 #include "Sound.hpp"
 
 Sound::Sound() {
-	this->max = 90;
-	this->min = 85;
-	this->dataType = 3;
+	this->m_max = 90;
+	this->m_min = 85;
+	this->name = "Son";
+	this->m_logFileName ="soundLog.txt";
+	this->m_unit = "dB";
+	this->frequency = 1000;
 }
 
 Sound::~Sound() {}

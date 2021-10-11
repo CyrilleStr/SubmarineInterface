@@ -13,19 +13,16 @@
 #include <conio.h>
 #include <thread>
 
-class Interface {
-public:
-	/**
-	 * @brief Construct a new Interface object
-	 * 
-	 */
-	Interface();
+using namespace std;
 
+class Interface
+{
+	public:
 	/**
-	 * @brief Destroy the Interface object
+	 * @brief display the top banner of the interface
 	 * 
 	 */
-	virtual ~Interface();
+	void display_banner();
 
 	/**
 	 * @brief clear the screen and display the top banner
@@ -33,11 +30,6 @@ public:
 	 */
 	void clear();
 
-	/**
-	 * @brief display the top banner of the interface
-	 * 
-	 */
-	void display_banner();
 
 	/**
 	 * @brief display the menu, get and return the user's choice
@@ -47,7 +39,7 @@ public:
 	int display_menu();
 
 	/**
-	 * @brief wait for any key + Enter to continue to program
+	 * @brief wait for the user to press Enter to continue the program
 	 * 
 	 */
 	void waitUser();

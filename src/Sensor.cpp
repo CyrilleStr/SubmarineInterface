@@ -12,18 +12,33 @@ Sensor::Sensor() {
 
 Sensor::~Sensor() {}
 
-int Sensor::getData()
+std::string Sensor::getData()
 {
-	return this->aleaGenVal();
+	std::string data = std::to_string(this->aleaGenVal()) + " " + this->getUnit();
+	return data;
 }
 
 int Sensor::aleaGenVal()
 {
-	return rand() % (this->max - this->min) + this->min;
+	return rand() % (this->m_max - this->m_min) + this->m_min;
 }
 
-int Sensor::getDataType()
+std::string Sensor::getUnit()
 {
-	return this->dataType;
+	return this->m_unit;
 }
 
+std::string Sensor::getLogFileName()
+{
+	return this->m_logFileName;
+}
+
+int Sensor::getFrequency()
+{
+	return this->frequency;
+}
+
+std::string Sensor::getName()
+{
+	return this->name;
+}
