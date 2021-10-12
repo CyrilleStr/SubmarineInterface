@@ -274,7 +274,35 @@ CMakeFiles/AP4A.dir/src/Humidity.cpp.obj: src/Humidity.cpp \
   C:/mingw64/include/c++/11.2.0/bits/charconv.h \
   C:/mingw64/include/c++/11.2.0/bits/functional_hash.h \
   C:/mingw64/include/c++/11.2.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc
+  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc \
+  C:/mingw64/include/c++/11.2.0/iostream \
+  C:/mingw64/include/c++/11.2.0/ostream \
+  C:/mingw64/include/c++/11.2.0/ios \
+  C:/mingw64/include/c++/11.2.0/exception \
+  C:/mingw64/include/c++/11.2.0/bits/exception_ptr.h \
+  C:/mingw64/include/c++/11.2.0/bits/cxxabi_init_exception.h \
+  C:/mingw64/include/c++/11.2.0/typeinfo \
+  C:/mingw64/include/c++/11.2.0/bits/nested_exception.h \
+  C:/mingw64/include/c++/11.2.0/bits/ios_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.tcc \
+  C:/mingw64/include/c++/11.2.0/system_error \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/mingw64/include/c++/11.2.0/stdexcept \
+  C:/mingw64/include/c++/11.2.0/streambuf \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.h \
+  C:/mingw64/include/c++/11.2.0/cwctype \
+  C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf_iterator.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/ostream.tcc \
+  C:/mingw64/include/c++/11.2.0/istream \
+  C:/mingw64/include/c++/11.2.0/bits/istream.tcc
 
 CMakeFiles/AP4A.dir/src/Interface.cpp.obj: src/Interface.cpp \
   src/Interface.hpp \
@@ -535,7 +563,35 @@ CMakeFiles/AP4A.dir/src/Light.cpp.obj: src/Light.cpp \
   C:/mingw64/include/c++/11.2.0/bits/charconv.h \
   C:/mingw64/include/c++/11.2.0/bits/functional_hash.h \
   C:/mingw64/include/c++/11.2.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc
+  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc \
+  C:/mingw64/include/c++/11.2.0/iostream \
+  C:/mingw64/include/c++/11.2.0/ostream \
+  C:/mingw64/include/c++/11.2.0/ios \
+  C:/mingw64/include/c++/11.2.0/exception \
+  C:/mingw64/include/c++/11.2.0/bits/exception_ptr.h \
+  C:/mingw64/include/c++/11.2.0/bits/cxxabi_init_exception.h \
+  C:/mingw64/include/c++/11.2.0/typeinfo \
+  C:/mingw64/include/c++/11.2.0/bits/nested_exception.h \
+  C:/mingw64/include/c++/11.2.0/bits/ios_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.tcc \
+  C:/mingw64/include/c++/11.2.0/system_error \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/mingw64/include/c++/11.2.0/stdexcept \
+  C:/mingw64/include/c++/11.2.0/streambuf \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.h \
+  C:/mingw64/include/c++/11.2.0/cwctype \
+  C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf_iterator.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/ostream.tcc \
+  C:/mingw64/include/c++/11.2.0/istream \
+  C:/mingw64/include/c++/11.2.0/bits/istream.tcc
 
 CMakeFiles/AP4A.dir/src/Scheduler.cpp.obj: src/Scheduler.cpp \
   src/Scheduler.hpp \
@@ -809,7 +865,35 @@ CMakeFiles/AP4A.dir/src/Sensor.cpp.obj: src/Sensor.cpp \
   C:/mingw64/include/c++/11.2.0/bits/charconv.h \
   C:/mingw64/include/c++/11.2.0/bits/functional_hash.h \
   C:/mingw64/include/c++/11.2.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc
+  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc \
+  C:/mingw64/include/c++/11.2.0/iostream \
+  C:/mingw64/include/c++/11.2.0/ostream \
+  C:/mingw64/include/c++/11.2.0/ios \
+  C:/mingw64/include/c++/11.2.0/exception \
+  C:/mingw64/include/c++/11.2.0/bits/exception_ptr.h \
+  C:/mingw64/include/c++/11.2.0/bits/cxxabi_init_exception.h \
+  C:/mingw64/include/c++/11.2.0/typeinfo \
+  C:/mingw64/include/c++/11.2.0/bits/nested_exception.h \
+  C:/mingw64/include/c++/11.2.0/bits/ios_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.tcc \
+  C:/mingw64/include/c++/11.2.0/system_error \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/mingw64/include/c++/11.2.0/stdexcept \
+  C:/mingw64/include/c++/11.2.0/streambuf \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.h \
+  C:/mingw64/include/c++/11.2.0/cwctype \
+  C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf_iterator.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/ostream.tcc \
+  C:/mingw64/include/c++/11.2.0/istream \
+  C:/mingw64/include/c++/11.2.0/bits/istream.tcc
 
 CMakeFiles/AP4A.dir/src/Server.cpp.obj: src/Server.cpp \
   src/Server.hpp \
@@ -1059,7 +1143,35 @@ CMakeFiles/AP4A.dir/src/Sound.cpp.obj: src/Sound.cpp \
   C:/mingw64/include/c++/11.2.0/bits/charconv.h \
   C:/mingw64/include/c++/11.2.0/bits/functional_hash.h \
   C:/mingw64/include/c++/11.2.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc
+  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc \
+  C:/mingw64/include/c++/11.2.0/iostream \
+  C:/mingw64/include/c++/11.2.0/ostream \
+  C:/mingw64/include/c++/11.2.0/ios \
+  C:/mingw64/include/c++/11.2.0/exception \
+  C:/mingw64/include/c++/11.2.0/bits/exception_ptr.h \
+  C:/mingw64/include/c++/11.2.0/bits/cxxabi_init_exception.h \
+  C:/mingw64/include/c++/11.2.0/typeinfo \
+  C:/mingw64/include/c++/11.2.0/bits/nested_exception.h \
+  C:/mingw64/include/c++/11.2.0/bits/ios_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.tcc \
+  C:/mingw64/include/c++/11.2.0/system_error \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/mingw64/include/c++/11.2.0/stdexcept \
+  C:/mingw64/include/c++/11.2.0/streambuf \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.h \
+  C:/mingw64/include/c++/11.2.0/cwctype \
+  C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf_iterator.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/ostream.tcc \
+  C:/mingw64/include/c++/11.2.0/istream \
+  C:/mingw64/include/c++/11.2.0/bits/istream.tcc
 
 CMakeFiles/AP4A.dir/src/Temperature.cpp.obj: src/Temperature.cpp \
   src/Temperature.hpp \
@@ -1167,7 +1279,35 @@ CMakeFiles/AP4A.dir/src/Temperature.cpp.obj: src/Temperature.cpp \
   C:/mingw64/include/c++/11.2.0/bits/charconv.h \
   C:/mingw64/include/c++/11.2.0/bits/functional_hash.h \
   C:/mingw64/include/c++/11.2.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc
+  C:/mingw64/include/c++/11.2.0/bits/basic_string.tcc \
+  C:/mingw64/include/c++/11.2.0/iostream \
+  C:/mingw64/include/c++/11.2.0/ostream \
+  C:/mingw64/include/c++/11.2.0/ios \
+  C:/mingw64/include/c++/11.2.0/exception \
+  C:/mingw64/include/c++/11.2.0/bits/exception_ptr.h \
+  C:/mingw64/include/c++/11.2.0/bits/cxxabi_init_exception.h \
+  C:/mingw64/include/c++/11.2.0/typeinfo \
+  C:/mingw64/include/c++/11.2.0/bits/nested_exception.h \
+  C:/mingw64/include/c++/11.2.0/bits/ios_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_classes.tcc \
+  C:/mingw64/include/c++/11.2.0/system_error \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/mingw64/include/c++/11.2.0/stdexcept \
+  C:/mingw64/include/c++/11.2.0/streambuf \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.h \
+  C:/mingw64/include/c++/11.2.0/cwctype \
+  C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/mingw64/include/c++/11.2.0/bits/streambuf_iterator.h \
+  C:/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/mingw64/include/c++/11.2.0/bits/locale_facets.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/basic_ios.tcc \
+  C:/mingw64/include/c++/11.2.0/bits/ostream.tcc \
+  C:/mingw64/include/c++/11.2.0/istream \
+  C:/mingw64/include/c++/11.2.0/bits/istream.tcc
 
 
 C:/mingw64/include/c++/11.2.0/bits/charconv.h:

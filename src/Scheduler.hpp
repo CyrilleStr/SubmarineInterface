@@ -36,7 +36,7 @@ private:
 	 * 
 	 * @param sensor 
 	 */
-	void getData(Sensor sensor_p);
+	template <typename T> void getData(Sensor<T> sensor_p);
 public:
 	/**
 	 * @brief Construct a new Scheduler object
@@ -56,6 +56,12 @@ public:
 	 * @param i : the interface
 	 */
 	void schedule(Interface interface_p);
+
+	/**
+	 * @brief Open a interafce to change the frequency of each sensors 
+	 * 
+	 */
+	// void changeSensorsFrequency(Interface interface_p);
 };
 
 #endif /* SCHEDULER_HPP_ */

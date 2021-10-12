@@ -6,39 +6,48 @@
 
 #include "Sensor.hpp"
 
-Sensor::Sensor() {
+template <typename T> 
+Sensor<T>::Sensor() {
 	srand(time(NULL));
 }
 
-Sensor::~Sensor() {}
+template <typename T> 
+Sensor<T>::~Sensor() {}
 
-std::string Sensor::getData()
+template <typename T> 
+std::string Sensor<T>::getData()
 {
 	std::string data = std::to_string(this->aleaGenVal()) + " " + this->getUnit();
 	return data;
 }
 
-int Sensor::aleaGenVal()
-{
-	return rand() % (this->m_max - this->m_min) + this->m_min;
-}
-
-std::string Sensor::getUnit()
+template <typename T> 
+std::string Sensor<T>::getUnit()
 {
 	return this->m_unit;
 }
 
-std::string Sensor::getLogFileName()
+template <typename T> 
+std::string Sensor<T>::getLogFileName()
 {
 	return this->m_logFileName;
 }
 
-int Sensor::getFrequency()
+template <typename T> 
+void Sensor<T>::changeFrequency(int frequency_p)
+{
+	this->m_frequency = frequency_p;
+	std::cout << this->m_frequency << std::endl;
+}
+
+template <typename T> 
+int Sensor<T>::getFrequency()
 {
 	return this->m_frequency;
 }
 
-std::string Sensor::getName()
+template <typename T> 
+std::string Sensor<T>::getName()
 {
 	return this->m_name;
 }

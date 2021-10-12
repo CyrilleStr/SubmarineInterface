@@ -17,3 +17,8 @@ Light::Light()
 }
 
 Light::~Light() {}
+
+bool Light::aleaGenVal()
+{
+	return true;
+}

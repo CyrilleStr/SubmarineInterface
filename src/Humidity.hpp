@@ -10,7 +10,7 @@
 
 #include "Sensor.hpp"
 
-class Humidity : public Sensor {
+class Humidity : public Sensor<int>{
 public:
 	/**
 	 * @brief Humidity's constructor
@@ -23,6 +23,13 @@ public:
 	 * 
 	 */
 	virtual ~Humidity();
+
+	/**
+	 * @brief 
+	 * 
+	 * @return int 
+	 */
+	int aleaGenVal();
 };
 
 #endif /* HUMIDITY_HPP_ */

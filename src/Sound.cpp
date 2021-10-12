@@ -17,3 +17,8 @@ Sound::Sound() {
 
 Sound::~Sound() {}
 
+float Sound::aleaGenVal()
+{
+	return 5.3;
+}
+

@@ -31,7 +31,7 @@ void Server::operator=(Server& server_p)
 	this->m_logActivation = server_p.m_logActivation;
 }
 
-void Server::fileWrite(Sensor sensor_p, const time_t now_p)
+template <typename T> void Server::fileWrite(Sensor<T> sensor_p, const time_t now_p)
 {
 	std::ofstream file("log/" + sensor_p.getLogFileName(),std::ios::app);
 	// file.open();
@@ -48,7 +48,7 @@ void Server::fileWrite(Sensor sensor_p, const time_t now_p)
 	file.close();
 }
 
-void Server::consolWrite(Sensor sensor_p,const time_t now_p)
+template <typename T> void Server::consolWrite(Sensor<T> sensor_p,const time_t now_p)
 {
 	std::string time = ctime(&now_p);
 	if(time[time.size() - 1] == '\n') time[time.size() - 1] = '\0';

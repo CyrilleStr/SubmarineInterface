@@ -16,7 +16,9 @@ Humidity::Humidity()
 	this->m_frequency = 1000;
 }
 
-Humidity::~Humidity() {
-	// TODO Auto-generated destructor stub
-}
+Humidity::~Humidity() {}
 
+int Humidity::aleaGenVal()
+{
+	return 45;
+}

@@ -11,6 +11,7 @@
 #include "Interface.hpp"
 #include "Scheduler.hpp"
 
+
 int main() {
 	Scheduler scheduler = Scheduler();
 	Interface interface = Interface();
@@ -29,7 +30,7 @@ int main() {
 					break;
 				case 2: // Changer les  frequences d'actualisation des capteurs
 				{
-					std::cout << "Fonction pas encore implemente" << std::endl;
+					// scheduler.changeSensorsFrequency(interface);
 					interface.waitUser();
 				}
 				break;

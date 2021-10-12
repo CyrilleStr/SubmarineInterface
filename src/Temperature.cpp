@@ -18,5 +18,7 @@ Temperature::Temperature()
 
 Temperature::~Temperature(){};
 
-
-
+int Temperature::aleaGenVal()
+{
+	return 14;
+}

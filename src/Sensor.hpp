@@ -11,7 +11,9 @@
 #include <cstdlib>
 #include <time.h>
 #include <string>
+#include <iostream>
 
+template <typename T> 
 class Sensor {
 	protected:
 		int m_min;
@@ -52,7 +54,7 @@ class Sensor {
 		 * 
 		 * @return int : the lucky integer
 		 */
-		int aleaGenVal();
+		virtual T aleaGenVal();
 
 		/**
 		 * @brief Get the Log File Name object
@@ -60,6 +62,13 @@ class Sensor {
 		 * @return string : the LogFile name
 		 */
 		std::string getLogFileName();
+
+		/**
+		 * @brief Change the frequency to que sensor's data
+		 * 
+		 * @param frequency 
+		 */
+		void changeFrequency(int frequency_p);
 
 		/**
 		 * @brief Get the Frequency object

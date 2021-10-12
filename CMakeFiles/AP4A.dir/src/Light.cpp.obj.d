@@ -105,4 +105,31 @@ CMakeFiles/AP4A.dir/src/Light.cpp.obj: \
  c:\mingw64\include\c++\11.2.0\bits\charconv.h \
  c:\mingw64\include\c++\11.2.0\bits\functional_hash.h \
  c:\mingw64\include\c++\11.2.0\bits\hash_bytes.h \
- c:\mingw64\include\c++\11.2.0\bits\basic_string.tcc
+ c:\mingw64\include\c++\11.2.0\bits\basic_string.tcc \
+ c:\mingw64\include\c++\11.2.0\iostream \
+ c:\mingw64\include\c++\11.2.0\ostream c:\mingw64\include\c++\11.2.0\ios \
+ c:\mingw64\include\c++\11.2.0\exception \
+ c:\mingw64\include\c++\11.2.0\bits\exception_ptr.h \
+ c:\mingw64\include\c++\11.2.0\bits\cxxabi_init_exception.h \
+ c:\mingw64\include\c++\11.2.0\typeinfo \
+ c:\mingw64\include\c++\11.2.0\bits\nested_exception.h \
+ c:\mingw64\include\c++\11.2.0\bits\ios_base.h \
+ c:\mingw64\include\c++\11.2.0\bits\locale_classes.h \
+ c:\mingw64\include\c++\11.2.0\bits\locale_classes.tcc \
+ c:\mingw64\include\c++\11.2.0\system_error \
+ c:\mingw64\include\c++\11.2.0\x86_64-w64-mingw32\bits\error_constants.h \
+ c:\mingw64\include\c++\11.2.0\stdexcept \
+ c:\mingw64\include\c++\11.2.0\streambuf \
+ c:\mingw64\include\c++\11.2.0\bits\streambuf.tcc \
+ c:\mingw64\include\c++\11.2.0\bits\basic_ios.h \
+ c:\mingw64\include\c++\11.2.0\bits\locale_facets.h \
+ c:\mingw64\include\c++\11.2.0\cwctype \
+ c:\mingw64\x86_64-w64-mingw32\include\wctype.h \
+ c:\mingw64\include\c++\11.2.0\x86_64-w64-mingw32\bits\ctype_base.h \
+ c:\mingw64\include\c++\11.2.0\bits\streambuf_iterator.h \
+ c:\mingw64\include\c++\11.2.0\x86_64-w64-mingw32\bits\ctype_inline.h \
+ c:\mingw64\include\c++\11.2.0\bits\locale_facets.tcc \
+ c:\mingw64\include\c++\11.2.0\bits\basic_ios.tcc \
+ c:\mingw64\include\c++\11.2.0\bits\ostream.tcc \
+ c:\mingw64\include\c++\11.2.0\istream \
+ c:\mingw64\include\c++\11.2.0\bits\istream.tcc

@@ -10,7 +10,7 @@
 
 #include "Sensor.hpp"
 
-class Light: public Sensor {
+class Light: public Sensor<bool> {
 public:
 	/**
 	 * @brief Construct a new Light object
@@ -23,6 +23,8 @@ public:
 	 * 
 	 */
 	virtual ~Light();
+
+	bool aleaGenVal();
 };
 
 #endif /* LIGHT_HPP_ */

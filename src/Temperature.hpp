@@ -10,7 +10,7 @@
 
 #include "Sensor.hpp"
 
-class Temperature : public Sensor{
+class Temperature : public Sensor<int>{
 public:
 	/**
 	 * @brief Construct a new Temperature object
@@ -23,6 +23,8 @@ public:
 	 * 
 	 */
 	virtual ~Temperature();
+
+ 	int aleaGenVal();
 };
 
 #endif /* TEMPERATURE_HPP_ */

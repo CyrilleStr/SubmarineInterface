@@ -10,7 +10,7 @@
 
 #include "Sensor.hpp"
 
-class Sound: public Sensor {
+class Sound: public Sensor<float> {
 public:
 	/**
 	 * @brief Construct a new Sound object
@@ -23,6 +23,8 @@ public:
 	 * 
 	 */
 	virtual ~Sound();
+
+	float aleaGenVal();
 };
 
 #endif /* SOUND_HPP_ */

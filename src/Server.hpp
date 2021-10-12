@@ -59,7 +59,7 @@ public:
 	 * @param sensor_p 
 	 * @param now_p 
 	 */
-	void fileWrite(Sensor sensor_p,const time_t now_p);
+	template <typename T> void fileWrite(Sensor<T> sensor_p,const time_t now_p);
 
 	/**
 	 * @brief 
@@ -67,7 +67,7 @@ public:
 	 * @param sensor_p 
 	 * @param now_p 
 	 */
-	void consolWrite(Sensor sensor_p,const time_t now_p);
+	template <typename T> void consolWrite(Sensor<T> sensor_p,const time_t now_p);
 
 	/**
 	 * @brief change the status of the console activation
