@@ -51,3 +51,9 @@ std::string Sensor<T>::getName()
 {
 	return this->m_name;
 }
+
+// Instations des classes template pour que le compilateur les compile
+// (nécessaire car elles ne sont pas instantiés dans le AP4A.cpp)
+template class Sensor<int>;
+template class Sensor<bool>;
+template class Sensor<float>;

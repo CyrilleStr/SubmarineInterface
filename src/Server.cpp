@@ -31,29 +31,28 @@ void Server::operator=(Server& server_p)
 	this->m_logActivation = server_p.m_logActivation;
 }
 
-template <typename T> void Server::fileWrite(Sensor<T> sensor_p, const time_t now_p)
+template <typename T> void Server::fileWrite(Sensor<T>* sensor_p, const time_t now_p)
 {
-	std::ofstream file("log/" + sensor_p.getLogFileName(),std::ios::app);
-	// file.open();
+	std::string time = ctime(&now_p);
+	if(time[time.size() - 1] == '\n') time[time.size() - 1] = '\0';
+	std::string cat =  sensor_p->getName() + " (" + time + ") : " + sensor_p->getData() + "\n";
+	std::cout << cat;
+}
+
+template <typename T> void Server::consolWrite(Sensor<T>* sensor_p,const time_t now_p)
+{
+	std::ofstream file("log/" + sensor_p->getLogFileName(),std::ios::app);
 	if(file.is_open())
 	{
 		std::string time = ctime(&now_p);
 		if(time[time.size() - 1] == '\n') time[time.size() - 1] = ')';
-		file << sensor_p.getName() << " (" << time << " : " << sensor_p.getData() << std::endl;
+		file << sensor_p->getName() << " (" << time << " : " << sensor_p->getData() << std::endl;
 	}
 	else
 	{
-		std::cout << "Erreur: impossible d\'ouvrir le ficher de log : " << sensor_p.getData() << std::endl;
+		std::cout << "Erreur: impossible d\'ouvrir le ficher de log : " << sensor_p->getData() << std::endl;
 	}
 	file.close();
-}
-
-template <typename T> void Server::consolWrite(Sensor<T> sensor_p,const time_t now_p)
-{
-	std::string time = ctime(&now_p);
-	if(time[time.size() - 1] == '\n') time[time.size() - 1] = '\0';
-	std::string cat =  sensor_p.getName() + " (" + time + ") : " + sensor_p.getData() + "\n";
-	std::cout << cat;
 }
 
 void Server::changeStatusConsol(bool status_p)
@@ -77,4 +76,11 @@ bool Server::getStatusLog()
 }
 
 
-
+// Instations des fonctions template pour que le compilateur les compile
+// (nécessaire car elles ne sont pas instantiés dans le AP4A.cpp)
+template void Server::fileWrite<int>(Sensor<int>* ,const time_t);
+template void Server::fileWrite<float>(Sensor<float>* ,const time_t);
+template void Server::fileWrite<bool>(Sensor<bool>* ,const time_t);
+template void Server::consolWrite<int>(Sensor<int>* ,const time_t);
+template void Server::consolWrite<float>(Sensor<float>* ,const time_t);
+template void Server::consolWrite<bool>(Sensor<bool>* ,const time_t);

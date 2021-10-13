@@ -23,6 +23,8 @@
 #include "Temperature.hpp"
 #include "Humidity.hpp"
 
+static bool s_stop = false;
+
 class Scheduler {
 private:
 	Server server;
@@ -36,7 +38,8 @@ private:
 	 * 
 	 * @param sensor 
 	 */
-	template <typename T> void getData(Sensor<T> sensor_p);
+	template <typename T> void getData(Sensor<T>* sensor_p);
+
 public:
 	/**
 	 * @brief Construct a new Scheduler object

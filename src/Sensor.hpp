@@ -14,7 +14,8 @@
 #include <iostream>
 
 template <typename T> 
-class Sensor {
+class Sensor 
+{
 	protected:
 		int m_min;
 		int m_max;
@@ -29,6 +30,7 @@ class Sensor {
 		 * @return string : the Unit object
 		 */
 		std::string getUnit();
+
 	public:
 		/**
 		 * @brief Construct a new Sensor object
@@ -50,11 +52,11 @@ class Sensor {
 		std::string getData();
 
 		/**
-		 * @brief generate a lucky integer within a given range [min;max]
+		 * @brief 
 		 * 
-		 * @return int : the lucky integer
+		 * @return T 
 		 */
-		virtual T aleaGenVal();
+		virtual T aleaGenVal() = 0;
 
 		/**
 		 * @brief Get the Log File Name object

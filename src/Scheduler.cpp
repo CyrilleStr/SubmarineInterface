@@ -6,8 +6,6 @@
 
 #include "Scheduler.hpp"
 
-static bool s_stop = false;
-
 Scheduler::Scheduler() : 
 	server(Server(true,true)),
 	humidity(Humidity()),
@@ -25,22 +23,21 @@ void Scheduler::schedule(Interface interface_p)
 
 	s_stop = false;
 
-	std::thread tTemperature(&Scheduler::getData<int>,this,this->temperature);
-	std::thread tHumidity(&Scheduler::getData<int>,this,this->humidity);
-	std::thread tSound(&Scheduler::getData<float>,this,this->sound);
-	std::thread tLight(&Scheduler::getData<bool>,this,this->light);
+	std::thread tTemperature(&Scheduler::getData<int>,this,&this->temperature);
+	std::thread tHumidity(&Scheduler::getData<int>,this,&this->humidity);
+	std::thread tSound(&Scheduler::getData<float>,this,&this->sound);
+	std::thread tLight(&Scheduler::getData<bool>,this,&this->light);
 
 	// Wait for the user to press Enter to stop
 	std::cin.get();
 	s_stop = true;
-
 	tTemperature.join();
 	tHumidity.join();
 	tSound.join();
 	tLight.join();
 }
 
-template <typename T> void Scheduler::getData(Sensor<T> sensor_p)
+template <typename T> void Scheduler::getData(Sensor<T>* sensor_p)
 {
 	while(!s_stop)
 	{
@@ -48,7 +45,7 @@ template <typename T> void Scheduler::getData(Sensor<T> sensor_p)
 			this->server.consolWrite<T>(sensor_p,time(0));
 		if(this->server.getStatusLog())
 			this->server.fileWrite<T>(sensor_p,time(0));
-		std:this_thread::sleep_for(std::chrono::milliseconds(sensor_p.getFrequency()));
+		std:this_thread::sleep_for(std::chrono::milliseconds(sensor_p->getFrequency()));
 	}
 }
 

@@ -10,21 +10,22 @@
 
 #include "Sensor.hpp"
 
-class Sound: public Sensor<float> {
-public:
-	/**
-	 * @brief Construct a new Sound object
-	 * 
-	 */
-	Sound();
+class Sound: public Sensor<float> 
+{
+	public:
+		/**
+		 * @brief Construct a new Sound object
+		 * 
+		 */
+		Sound();
 
-	/**
-	 * @brief Destroy the Sound object
-	 * 
-	 */
-	virtual ~Sound();
-
-	float aleaGenVal();
+		/**
+		 * @brief Destroy the Sound object
+		 * 
+		 */
+		virtual ~Sound();
+		
+		float aleaGenVal();
 };
 
 #endif /* SOUND_HPP_ */
