@@ -12,6 +12,8 @@
 
 class Sound: public Sensor<float> 
 {
+	private:
+		
 	public:
 		/**
 		 * @brief Construct a new Sound object

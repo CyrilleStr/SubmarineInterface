@@ -28,30 +28,22 @@ class Server
 		Server();
 
 		/**
-		 * @brief Construct a new Server object
-		 * 
-		 * @param consolActivation : the status of the console activation
-		 * @param logActivation : the status of the log activation
-		 */
-		Server(bool consolActivation_p, bool logActivation_p);
-
-		/**
 		 * @brief Copy constructor
 		 * 
 		 */
 		Server(const Server& server_p);
 
 		/**
-		 * @brief Operation overload =
-		 *
-		 */
-		void operator=(Server& server_p);
-
-		/**
 		 * @brief Destroy the Server object
 		 * 
 		 */
 		virtual ~Server();
+
+		/**
+		 * @brief Operation overload =
+		 *
+		 */
+		Server& operator=(const Server& server_p);
 
 		/**
 		 * @brief 

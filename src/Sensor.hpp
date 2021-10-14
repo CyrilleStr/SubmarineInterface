@@ -39,6 +39,19 @@ class Sensor
 		Sensor();
 
 		/**
+		 * @brief Construct a new Sensor object
+		 * 
+		 */
+		Sensor(const Sensor&);
+
+		/**
+		 * @brief 
+		 * 
+		 * @return Sensor& 
+		 */
+		Sensor& operator=(const Sensor&);
+
+		/**
 		 * @brief Destroy the Sensor object
 		 * 
 		 */

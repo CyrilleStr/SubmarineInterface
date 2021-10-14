@@ -6,7 +6,8 @@
 
 #include "Sound.hpp"
 
-Sound::Sound() {
+Sound::Sound() 
+{
 	this->m_max = 90;
 	this->m_min = 85;
 	this->m_name = "Son";

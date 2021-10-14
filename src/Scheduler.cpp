@@ -7,14 +7,33 @@
 #include "Scheduler.hpp"
 
 Scheduler::Scheduler() : 
-	server(Server(true,true)),
+	server(Server()),
 	humidity(Humidity()),
 	temperature(Temperature()),
 	light(Light()),
 	sound(Sound())
 {};
 
+Scheduler::Scheduler(const Scheduler& s)
+{
+	this->server = s.server;
+	this->humidity = s.humidity;
+	this->temperature = s.temperature;
+	this->light = s.light;
+	this->sound = s.sound;
+}
+
 Scheduler::~Scheduler() {}
+
+Scheduler& Scheduler::operator=(const Scheduler& s)
+{
+	this->server = s.server;
+	this->humidity = s.humidity;
+	this->temperature = s.temperature;
+	this->light = s.light;
+	this->sound = s.sound;
+	return *this;
+}
 
 void Scheduler::schedule(Interface interface_p)
 {

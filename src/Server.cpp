@@ -12,23 +12,19 @@ Server::Server():
 	m_logActivation(true)
 {};
 
-Server::Server(bool consolActivation_p, bool logActivation_p):
-	m_consolActivation(consolActivation_p),
-	m_logActivation(logActivation_p)
-{};
-
-Server::~Server(){};
-
 Server::Server(const Server& server_p)
 {
 	this->m_logActivation = server_p.m_logActivation;
 	this->m_consolActivation = server_p.m_consolActivation;
 }
 
-void Server::operator=(Server& server_p)
+Server::~Server(){};
+
+Server& Server::operator=(const Server& server_p)
 {
 	this->m_consolActivation = server_p.m_consolActivation;
 	this->m_logActivation = server_p.m_logActivation;
+	return *this;
 }
 
 template <typename T> void Server::fileWrite(Sensor<T>* sensor_p, const time_t now_p)
@@ -76,8 +72,7 @@ bool Server::getStatusLog()
 }
 
 
-// Instations des fonctions template pour que le compilateur les compile
-// (nécessaire car elles ne sont pas instantiés dans le AP4A.cpp)
+// Instantiations des fonctions template pour que le compilateur les compile
 template void Server::fileWrite<int>(Sensor<int>* ,const time_t);
 template void Server::fileWrite<float>(Sensor<float>* ,const time_t);
 template void Server::fileWrite<bool>(Sensor<bool>* ,const time_t);

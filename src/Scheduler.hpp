@@ -47,11 +47,15 @@ public:
 	 */
 	Scheduler();
 
+	Scheduler(const Scheduler&);
+
 	/**
 	 * @brief Destroy the Scheduler object
 	 * 
 	 */
 	virtual ~Scheduler();
+
+	Scheduler& operator=(const Scheduler&);
 
 	/**
 	 * @brief get data, log them in a file and print them in the console through the server

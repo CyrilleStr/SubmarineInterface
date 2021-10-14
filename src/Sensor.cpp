@@ -11,6 +11,29 @@ Sensor<T>::Sensor() {
 	srand(time(NULL));
 }
 
+template <typename T>
+Sensor<T>::Sensor(const Sensor& s)
+{
+	this->m_min = s.m_min;
+	this->m_max = s.m_max;
+	this->m_frequency = s.m_frequency;
+	this->m_name = s.m_name;
+	this->m_logFileName = s.m_logFileName;
+	this->m_unit = s.m_unit;
+}
+
+template <typename T>
+Sensor<T>& Sensor<T>::operator=(const Sensor& s)
+{
+	this->m_min = s.m_min;
+	this->m_max = s.m_max;
+	this->m_frequency = s.m_frequency;
+	this->m_name = s.m_name;
+	this->m_logFileName = s.m_logFileName;
+	this->m_unit = s.m_unit;
+	return *this;
+}
+
 template <typename T> 
 Sensor<T>::~Sensor() {}
 
@@ -52,8 +75,7 @@ std::string Sensor<T>::getName()
 	return this->m_name;
 }
 
-// Instations des classes template pour que le compilateur les compile
-// (nécessaire car elles ne sont pas instantiés dans le AP4A.cpp)
+// Instantiations des classes template pour que le compilateur les compile
 template class Sensor<int>;
 template class Sensor<bool>;
 template class Sensor<float>;
